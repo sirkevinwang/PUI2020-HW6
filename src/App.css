@@ -1,0 +1,128 @@
+/*      */
+/* Main */
+/*      */
+html {
+  background-color: black;
+}
+
+body {
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
+  padding: 0;
+  margin: 0;
+  color: white;
+  background: black;
+}
+
+/* Navbar */
+.navbar {
+  padding: 2em;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.links-container {
+  float: right;
+  font-weight: 600;
+  font-size: 1.25em;
+  font-family: 'SF Compact';
+  height: 4em;
+  line-height: 4em;
+}
+
+#logo {
+  height: 4em;
+}
+
+/* Shared Utilities */
+.text-center {
+  text-align: center;
+}
+
+.center-parent {
+  position: relative;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.vertical-center {
+  top: 50%;
+  transform: translate(-50%, 0%);
+}
+
+.py-8 {
+  padding: 4em 0;
+}
+
+.my-4 {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.mb-4 {
+  margin-bottom: 2em;
+}
+
+.pb-4 {
+  padding-bottom: 2em;
+}
+
+.p-4 {
+  padding: 2em;
+}
+
+.py-4 {
+  padding: 2em 0;
+}
+
+.py-2 {
+  padding: 1em 0;
+}
+
+.px-2 {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.pb-2 {
+  padding-bottom: 1em;
+}
+
+.mr-1 {
+  margin-right: .5em;
+}
+
+.pl-1 {
+  padding-left: 0.5em;
+}
+
+/* Controls */ 
+.round-btn {
+  font-family: 'SF Compact';
+  font-size: 1.25em;
+  border: 0.15em white solid;
+  border-radius: 1.875em;
+  font-weight: 600;
+  padding: 0.65em 1.65em;
+}
+
+.round-btn:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+/* Covers */
+.cover {
+  height: 100vh;
+}
+
+.page-cover {
+  height: 20vh;
+}
