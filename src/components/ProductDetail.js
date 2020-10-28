@@ -1,9 +1,17 @@
-import { Component } from 'react';
+import React, { useState } from 'react';
 import { HashRouter, Route, Link } from "react-router-dom";
 import './ProductDetail.css';
 import CoverImage from '../img/cover.png'
 
+
 const ProductDetail = (props) => {
+  const [quantity, setQuantity] = useState(1);
+  
+  function handleChange(event) {
+    let value = event.target.value;
+    setQuantity(value)
+  };
+
   return (
     <div className="container">
       <div class="intro-section center-parent text-center"></div>
@@ -23,13 +31,13 @@ const ProductDetail = (props) => {
             <span>Quantity</span>
           </div>
           <div className="dropdown control-group">
-            <select name="quantity" id="quantity">
-              <option value="1">1</option>
-              <option value="3" selected>3</option>
+            <select name="quantity" id="quantity" onChange={(e) => handleChange(e)}>
+              <option value="1" selected>1</option>
+              <option value="3">3</option>
               <option value="6">6</option>
               <option value="12">12</option>
             </select>
-            <span>Rolls</span>
+            <span>Roll{quantity === "1" ? "" : "s"}</span>
           </div>
         </div>
         <div className="glazing">
@@ -56,7 +64,7 @@ const ProductDetail = (props) => {
             </label>
           </div>
         </div>
-        <span className="price pl-1">Total Amount: $3.99</span>
+        <span className="price pl-1">Total Amount: ${quantity * props.price}</span>
         <div className="add-to-cart-btns my-4">
           <span className="round-btn mr-1">Add to Cart</span>
           <span className="round-btn">Buy with &#xF8FF;Pay</span>
