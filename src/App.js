@@ -1,9 +1,14 @@
 import './App.css';
+import { HashRouter, Route, Link } from 'react-router-dom';
+
 import Home from './components/Home';
 import Shop from './components/Shop';
-import { HashRouter, Route, Link } from "react-router-dom";
+import ProductDetail from './components/ProductDetail';
 
-function App() {  
+import OriginalImage from './img/item-images/the-og.png';
+import BlackberryImage from './img/item-images/bb.png';
+
+function App() {
   return (
     <HashRouter>
       <div className="App">
@@ -19,10 +24,16 @@ function App() {
             <a className="p-4 px-2"><span>Cart</span></a>
           </div>
         </nav>
-        
+
       </div>
-      <Route exact path="/" component={Home}/>
+      <Route exact path="/" component={Home} />
       <Route path="/shop" component={Shop} />
+      <Route path="/products/original" render={(props) => (
+        <ProductDetail {...props} id="og" productName="The Original" price="3.99" imgSrc={OriginalImage}/>
+      )}/>
+      <Route path="/products/blackberry" render={(props) => (
+        <ProductDetail {...props} id="bb" productName="Blackberry Delight" price="4.99" imgSrc={BlackberryImage}/>
+      )} />
     </HashRouter>
   );
 }

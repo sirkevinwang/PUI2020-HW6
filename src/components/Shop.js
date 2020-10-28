@@ -41,25 +41,30 @@ function Shop() {
       imgSrc: './img/pecan.png',
       productLink: 'products/original'
     },
-    
+
   ];
   return (
     <>
-    <div class="top-cover">
-      {/* Cover Image */}
-      <div class="intro-section center-parent text-center">
-        <div class="center s-center">
-          <h3 class="text-center">Cinnamon Rolls</h3>
+      <div class="top-cover">
+        {/* Cover Image */}
+        <div class="intro-section center-parent text-center" style={{
+          backgroundImage: `linear-gradient(
+        rgba(0, 0, 0, 0.12), 
+        rgba(0, 0, 0, 0.12)
+      ), url(${CoverImage})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', color: 'white'
+        }}>
+          <div class="center s-center">
+            <h3 class="text-center">Cinnamon Rolls</h3>
+          </div>
         </div>
       </div>
-    </div>
-    { /* Flavor Picker */ }
+      { /* Flavor Picker */}
       <div class="flavors-content">
         <div>
           <h4>First, let's pick a flavor...</h4>
         </div>
         <div class="flavor-grid">
-          {flavors.map((flavor, index) => 
+          {flavors.map((flavor, index) =>
             <div>
               <Link to={flavor.productLink}>
                 <div id={flavor.id} class="flavor-item center-parent text-center">

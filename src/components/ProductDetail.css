@@ -1,11 +1,11 @@
 /* Utilities */
-h2 {
+.product-detail h2 {
   font-weight: 600;
   font-size: 4.25em;
   margin: 0 0;
 }
 
-h3 {
+.product-detail h3 {
   font-family: 'Canela';
   font-weight: 400;
   font-size: 2.5em;
