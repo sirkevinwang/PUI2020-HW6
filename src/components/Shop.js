@@ -1,5 +1,4 @@
-import { Component } from 'react';
-import { HashRouter, Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './Shop.css';
 import CoverImage from '../img/cover.png'
 
@@ -45,30 +44,30 @@ function Shop() {
   ];
   return (
     <>
-      <div class="top-cover">
+      <div className="top-cover">
         {/* Cover Image */}
-        <div class="intro-section center-parent text-center" style={{
+        <div className="intro-section center-parent text-center" style={{
           backgroundImage: `linear-gradient(
         rgba(0, 0, 0, 0.12), 
         rgba(0, 0, 0, 0.12)
       ), url(${CoverImage})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', color: 'white'
         }}>
-          <div class="center s-center">
-            <h3 class="text-center">Cinnamon Rolls</h3>
+          <div className="center s-center">
+            <h3 className="text-center">Cinnamon Rolls</h3>
           </div>
         </div>
       </div>
       { /* Flavor Picker */}
-      <div class="flavors-content">
+      <div className="flavors-content">
         <div>
           <h4>First, let's pick a flavor...</h4>
         </div>
-        <div class="flavor-grid">
+        <div className="flavor-grid">
           {flavors.map((flavor, index) =>
             <div>
               <Link to={flavor.productLink}>
-                <div id={flavor.id} class="flavor-item center-parent text-center">
-                  <img class="center flavor-icon" alt={flavor.alt} src={flavor.imgSrc} />
+                <div id={flavor.id} className="flavor-item center-parent text-center">
+                  <img className="center flavor-icon" alt={flavor.alt} src={flavor.imgSrc} />
                 </div>
               </Link>
               <h5>{flavor.alt}</h5>

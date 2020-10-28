@@ -14,9 +14,9 @@ const ProductDetail = (props) => {
 
   return (
     <div className="container">
-      <div class="intro-section center-parent text-center"></div>
+      <div className="intro-section center-parent text-center"></div>
       {/* Product Image */}
-      <div class="product-image">
+      <div className="product-image">
         <img src={props.imgSrc} alt={props.productName} />
       </div>
       {/* Add to Cart UI */}
@@ -32,12 +32,12 @@ const ProductDetail = (props) => {
           </div>
           <div className="dropdown control-group">
             <select name="quantity" id="quantity" onChange={(e) => handleChange(e)}>
-              <option value="1" selected>1</option>
+              <option value="1" defaultChecked>1</option>
               <option value="3">3</option>
               <option value="6">6</option>
               <option value="12">12</option>
             </select>
-            <span>Roll{quantity === "1" ? "" : "s"}</span>
+            <span id="quantity-unit">Roll{quantity === "1" ? "" : "s"}</span>
           </div>
         </div>
         <div className="glazing">
@@ -47,7 +47,7 @@ const ProductDetail = (props) => {
           </div>
           <div className="radios control-group">
             <label className="option">None
-            <input type="radio" checked="checked" name="radio" />
+            <input type="radio" defaultChecked name="radio" />
               <span className="checkmark"></span>
             </label>
             <label className="option">Sugar - Milk

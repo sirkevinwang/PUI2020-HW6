@@ -4,6 +4,7 @@ import { HashRouter, Route, Link } from 'react-router-dom';
 import Home from './components/Home';
 import Shop from './components/Shop';
 import ProductDetail from './components/ProductDetail';
+import Cart from './components/Cart';
 
 import OriginalImage from './img/item-images/the-og.png';
 import BlackberryImage from './img/item-images/bb.png';
@@ -33,6 +34,9 @@ function App() {
       )}/>
       <Route path="/products/blackberry" render={(props) => (
         <ProductDetail {...props} id="bb" productName="Blackberry Delight" price="4.99" imgSrc={BlackberryImage}/>
+      )} />
+      <Route path="/cart" render={(props) => (
+        <Cart {...props} />
       )} />
     </HashRouter>
   );
