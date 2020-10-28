@@ -3,7 +3,7 @@ import Home from './components/Home';
 import Shop from './components/Shop';
 import { HashRouter, Route, Link } from "react-router-dom";
 
-function App() {
+function App() {  
   return (
     <HashRouter>
       <div className="App">
@@ -14,7 +14,7 @@ function App() {
           </Link>
           {/* Links in Navbar */}
           <div className="links-container">
-            <a className="p-4 px-2" href="./shop.html"><span>Shop</span></a>
+            <Link className="p-4 px-2" to="/shop"><span>Shop</span></Link>
             <a className="p-4 px-2"><span>Account</span></a>
             <a className="p-4 px-2"><span>Cart</span></a>
           </div>
@@ -22,7 +22,7 @@ function App() {
         
       </div>
       <Route exact path="/" component={Home}/>
-      <Route path="/shop" component={Shop}></Route>
+      <Route path="/shop" component={Shop} />
     </HashRouter>
   );
 }
