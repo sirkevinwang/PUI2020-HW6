@@ -8,37 +8,37 @@ function Shop() {
     {
       id: 'og',
       alt: 'Original',
-      imgSrc: '/img/og.png',
+      imgSrc: './img/og.png',
       productLink: 'products/original'
     },
     {
       id: 'bb',
       alt: 'Blackberry',
-      imgSrc: '/img/bb.png',
+      imgSrc: './img/bb.png',
       productLink: 'products/blackberry'
     },
     {
       id: 'walnut',
       alt: 'Walnut',
-      imgSrc: '/img/walnut.png',
+      imgSrc: './img/walnut.png',
       productLink: 'products/original'
     },
     {
       id: 'oggf',
       alt: 'Original GF',
-      imgSrc: '/img/oggf.png',
+      imgSrc: './img/oggf.png',
       productLink: 'products/original'
     },
     {
       id: 'ps',
       alt: 'Pumpkin Spice',
-      imgSrc: '/img/pumpkin.png',
+      imgSrc: './img/pumpkin.png',
       productLink: 'products/original'
     },
     {
       id: 'cp',
       alt: 'Caramel Pecan',
-      imgSrc: '/img/pecan.png',
+      imgSrc: './img/pecan.png',
       productLink: 'products/original'
     },
     
