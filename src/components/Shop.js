@@ -1,43 +1,50 @@
 import { Link } from "react-router-dom";
 import './Shop.css';
-import CoverImage from '../img/cover.png'
+
+import CoverImage from '../img/cover.png';
+import ogImg from '../img/og.png';
+import bbImg from '../img/bb.png';
+import walnutImg from '../img/walnut.png';
+import oggfImg from '../img/oggf.png';
+import pumpkinImg from '../img/pumpkin.png';
+import pecanImg from '../img/pecan.png';
 
 function Shop() {
   const flavors = [
     {
       id: 'og',
       alt: 'Original',
-      imgSrc: './img/og.png',
+      imgSrc: ogImg,
       productLink: 'products/original'
     },
     {
       id: 'bb',
       alt: 'Blackberry',
-      imgSrc: './img/bb.png',
+      imgSrc: bbImg,
       productLink: 'products/blackberry'
     },
     {
       id: 'walnut',
       alt: 'Walnut',
-      imgSrc: './img/walnut.png',
+      imgSrc: walnutImg,
       productLink: 'products/original'
     },
     {
       id: 'oggf',
       alt: 'Original GF',
-      imgSrc: './img/oggf.png',
+      imgSrc: oggfImg,
       productLink: 'products/original'
     },
     {
       id: 'ps',
       alt: 'Pumpkin Spice',
-      imgSrc: './img/pumpkin.png',
+      imgSrc: pumpkinImg,
       productLink: 'products/original'
     },
     {
       id: 'cp',
       alt: 'Caramel Pecan',
-      imgSrc: './img/pecan.png',
+      imgSrc: pecanImg,
       productLink: 'products/original'
     },
 

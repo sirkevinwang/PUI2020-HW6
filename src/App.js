@@ -8,6 +8,7 @@ import Cart from './components/Cart';
 
 import OriginalImage from './img/item-images/the-og.png';
 import BlackberryImage from './img/item-images/bb.png';
+import logo from './img/logo.png'
 
 function App() {
   return (
@@ -16,13 +17,13 @@ function App() {
         {/* Navbar */}
         <nav className="navbar">
           <Link to="/">
-            <img className="logo" id="logo" alt="logo" src="img/logo.png" />
+            <img className="logo" id="logo" alt="logo" src={logo} />
           </Link>
           {/* Links in Navbar */}
           <div className="links-container">
             <Link className="p-4 px-2" to="/shop"><span>Shop</span></Link>
-            <a className="p-4 px-2"><span>Account</span></a>
-            <a className="p-4 px-2"><span>Cart</span></a>
+            <span className="p-4 px-2">Account</span>
+            <Link className="p-4 px-2" to="/cart"><span>Cart</span></Link>
           </div>
         </nav>
 
