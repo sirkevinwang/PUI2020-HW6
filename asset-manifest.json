@@ -1,26 +1,33 @@
 {
   "files": {
-    "main.css": "/PUI2020-HW6/static/css/main.0c5b0437.chunk.css",
-    "main.js": "/PUI2020-HW6/static/js/main.5b38f7ed.chunk.js",
-    "main.js.map": "/PUI2020-HW6/static/js/main.5b38f7ed.chunk.js.map",
-    "runtime-main.js": "/PUI2020-HW6/static/js/runtime-main.9cbe207b.js",
-    "runtime-main.js.map": "/PUI2020-HW6/static/js/runtime-main.9cbe207b.js.map",
-    "static/js/2.d3813ef1.chunk.js": "/PUI2020-HW6/static/js/2.d3813ef1.chunk.js",
-    "static/js/2.d3813ef1.chunk.js.map": "/PUI2020-HW6/static/js/2.d3813ef1.chunk.js.map",
-    "static/js/3.ffc0226a.chunk.js": "/PUI2020-HW6/static/js/3.ffc0226a.chunk.js",
-    "static/js/3.ffc0226a.chunk.js.map": "/PUI2020-HW6/static/js/3.ffc0226a.chunk.js.map",
+    "main.css": "/PUI2020-HW6/static/css/main.25049600.chunk.css",
+    "main.js": "/PUI2020-HW6/static/js/main.9fa0d8da.chunk.js",
+    "main.js.map": "/PUI2020-HW6/static/js/main.9fa0d8da.chunk.js.map",
+    "runtime-main.js": "/PUI2020-HW6/static/js/runtime-main.2832aff7.js",
+    "runtime-main.js.map": "/PUI2020-HW6/static/js/runtime-main.2832aff7.js.map",
+    "static/js/2.61a0d9dc.chunk.js": "/PUI2020-HW6/static/js/2.61a0d9dc.chunk.js",
+    "static/js/2.61a0d9dc.chunk.js.map": "/PUI2020-HW6/static/js/2.61a0d9dc.chunk.js.map",
+    "static/js/3.0e1432c0.chunk.js": "/PUI2020-HW6/static/js/3.0e1432c0.chunk.js",
+    "static/js/3.0e1432c0.chunk.js.map": "/PUI2020-HW6/static/js/3.0e1432c0.chunk.js.map",
     "index.html": "/PUI2020-HW6/index.html",
-    "static/css/main.0c5b0437.chunk.css.map": "/PUI2020-HW6/static/css/main.0c5b0437.chunk.css.map",
-    "static/js/2.d3813ef1.chunk.js.LICENSE.txt": "/PUI2020-HW6/static/js/2.d3813ef1.chunk.js.LICENSE.txt",
+    "static/css/main.25049600.chunk.css.map": "/PUI2020-HW6/static/css/main.25049600.chunk.css.map",
+    "static/js/2.61a0d9dc.chunk.js.LICENSE.txt": "/PUI2020-HW6/static/js/2.61a0d9dc.chunk.js.LICENSE.txt",
     "static/media/App.css": "/PUI2020-HW6/static/media/SF-Compact-Display-Semibold.b775c004.otf",
+    "static/media/bb.169ab002.png": "/PUI2020-HW6/static/media/bb.169ab002.png",
     "static/media/bb.48160547.png": "/PUI2020-HW6/static/media/bb.48160547.png",
     "static/media/cover.d8a0d619.png": "/PUI2020-HW6/static/media/cover.d8a0d619.png",
-    "static/media/the-og.15106d0b.png": "/PUI2020-HW6/static/media/the-og.15106d0b.png"
+    "static/media/logo.075224da.png": "/PUI2020-HW6/static/media/logo.075224da.png",
+    "static/media/og.7fbc0add.png": "/PUI2020-HW6/static/media/og.7fbc0add.png",
+    "static/media/oggf.3dd8a37a.png": "/PUI2020-HW6/static/media/oggf.3dd8a37a.png",
+    "static/media/pecan.4cd8b6e6.png": "/PUI2020-HW6/static/media/pecan.4cd8b6e6.png",
+    "static/media/pumpkin.c84ff8e9.png": "/PUI2020-HW6/static/media/pumpkin.c84ff8e9.png",
+    "static/media/the-og.15106d0b.png": "/PUI2020-HW6/static/media/the-og.15106d0b.png",
+    "static/media/walnut.4708bbc2.png": "/PUI2020-HW6/static/media/walnut.4708bbc2.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.9cbe207b.js",
-    "static/js/2.d3813ef1.chunk.js",
-    "static/css/main.0c5b0437.chunk.css",
-    "static/js/main.5b38f7ed.chunk.js"
+    "static/js/runtime-main.2832aff7.js",
+    "static/js/2.61a0d9dc.chunk.js",
+    "static/css/main.25049600.chunk.css",
+    "static/js/main.9fa0d8da.chunk.js"
   ]
 }
