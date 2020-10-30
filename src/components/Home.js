@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <div className="cover center-parent text-center" style={{
       backgroundImage: `linear-gradient(
-        rgba(0, 0, 0, 0.12), 
-        rgba(0, 0, 0, 0.12)
+        rgba(0, 0, 0, 0.3), 
+        rgba(0, 0, 0, 0.3)
       ), url(${CoverImage})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', color: 'white'
     }}>
       <div className="center">

@@ -55,7 +55,7 @@ const ProductDetail = (props) => {
 
   return (
     <div className="container">
-      <div className="intro-section center-parent text-center"></div>
+      <div className="intro-section details center-parent text-center"></div>
       {/* Product Image */}
       <div className="product-image">
         <img src={props.imgSrc} alt={props.productName} />

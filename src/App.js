@@ -38,7 +38,7 @@ function App() {
           <div className="links-container">
             <Link className="p-4 px-2" to="/shop"><span>Shop</span></Link>
             <span className="p-4 px-2">Account</span>
-            <Link className="p-4 px-2 notification" to="/cart">
+            <Link className="p-4 px-2 notification" to="/cart" style={{paddingRight: "0px"}}>
               <span>Cart </span><span className="badge">{ cartSize }</span>
             </Link>
           </div>

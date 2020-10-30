@@ -21,3 +21,6 @@ a {
   text-decoration: none;
 }
 
+#cart-container {
+  padding: 2rem 5rem;
+}

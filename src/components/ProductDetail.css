@@ -64,7 +64,7 @@ a {
    align-items: center;
 }
 
-.intro-section {
+.intro-section.details  {
   height: 20vh;
 }
 
