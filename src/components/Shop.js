@@ -71,7 +71,7 @@ function Shop() {
         </div>
         <div className="flavor-grid">
           {flavors.map((flavor, index) =>
-            <div>
+            <div key={index}>
               <Link to={flavor.productLink}>
                 <div id={flavor.id} className="flavor-item center-parent text-center">
                   <img className="center flavor-icon" alt={flavor.alt} src={flavor.imgSrc} />

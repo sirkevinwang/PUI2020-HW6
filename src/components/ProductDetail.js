@@ -49,7 +49,8 @@ const ProductDetail = (props) => {
     const cartArr = cart;
     cartArr.push(productToAdd);
     setCart([...cartArr]);
-    props.addCartCallback();
+
+    props.setCartSize(cartArr.length);
   }
 
   return (
