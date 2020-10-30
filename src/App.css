@@ -102,6 +102,12 @@ body {
   padding-left: 0.5em;
 }
 
+.notification .badge {
+  padding: 4px 10px !important;
+  border-radius: 50%;
+  background-color: #dd4b3c;
+}
+
 /* Controls */ 
 .round-btn {
   font-family: 'SF Compact';

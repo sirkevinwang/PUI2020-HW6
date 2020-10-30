@@ -1,5 +1,6 @@
 import './App.css';
 import { HashRouter, Route, Link } from 'react-router-dom';
+import useLocalStorage from './hooks/UseLocalStorage.js'
 
 import Home from './components/Home';
 import Shop from './components/Shop';
@@ -11,6 +12,15 @@ import BlackberryImage from './img/item-images/bb.png';
 import logo from './img/logo.png'
 
 function App() {
+  const [cart, setCart] = useLocalStorage('cart', []);
+  const addCartCallback = () => {
+    this.forceUpdate()
+  }
+
+  function getCartCount() {
+    return cart.length
+  }
+
   return (
     <HashRouter>
       <div className="App">
@@ -23,7 +33,9 @@ function App() {
           <div className="links-container">
             <Link className="p-4 px-2" to="/shop"><span>Shop</span></Link>
             <span className="p-4 px-2">Account</span>
-            <Link className="p-4 px-2" to="/cart"><span>Cart</span></Link>
+            <Link className="p-4 px-2 notification" to="/cart">
+              <span>Cart </span><span class="badge">{getCartCount()}</span>
+            </Link>
           </div>
         </nav>
 
@@ -31,10 +43,10 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/shop" component={Shop} />
       <Route path="/products/original" render={(props) => (
-        <ProductDetail {...props} id="og" productName="The Original" price="3.99" imgSrc={OriginalImage}/>
+        <ProductDetail {...props} id="og" productName="The Original" price="3.99" imgSrc={OriginalImage} addCartCallback={addCartCallback}/>
       )}/>
       <Route path="/products/blackberry" render={(props) => (
-        <ProductDetail {...props} id="bb" productName="Blackberry Delight" price="4.99" imgSrc={BlackberryImage}/>
+        <ProductDetail {...props} id="bb" productName="Blackberry Delight" price="4.99" imgSrc={BlackberryImage} addCartCallback={addCartCallback}/>
       )} />
       <Route path="/cart" render={(props) => (
         <Cart {...props} />

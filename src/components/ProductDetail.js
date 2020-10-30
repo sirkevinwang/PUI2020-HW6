@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import useLocalStorage from '../hooks/UseLocalStorage.js';
 import './ProductDetail.css';
 
 import quantImg from '../img/num.png';
@@ -12,38 +13,43 @@ const ProductDetail = (props) => {
     "2": "0.3", 
     "3": "0.3", 
     "4": "1"
-  }
+  };
   const [quantity, setQuantity] = useState(1);
   const [glazing, setGlazing] = useState('1');
+  const [cart, setCart] = useLocalStorage('cart', []);
 
   const updateGlazing = (e) => {
     if (e.target.checked) {
-      setGlazing(e.target.value)
+      setGlazing(e.target.value);
     }
   }
-
   
   function calculateTotalPrice() {
-    const value = parseFloat(calculatePerItemPricing()) * quantity
-    return value.toFixed(2)
+    const value = parseFloat(calculatePerItemPricing()) * quantity;
+    return value.toFixed(2);
   }
   
   function calculatePerItemPricing() {
-    const value = parseFloat(props.price) + parseFloat(glazingPricing[glazing])
-    return value.toFixed(2)
+    const value = parseFloat(props.price) + parseFloat(glazingPricing[glazing]);
+    return value.toFixed(2);
   }
 
   function handleQuantityChange(event) {
     let value = event.target.value;
-    setQuantity(value)
+    setQuantity(value);
   };
 
-  function handleAddToCart(event) {
-    const productToBeAdded = {
+  function handleAddToCart() {
+    const productToAdd = {
       quantity: quantity,
       glazing: glazing,
       perItemPricing: calculatePerItemPricing()
-    }
+    };
+
+    const cartArr = cart;
+    cartArr.push(productToAdd);
+    setCart([...cartArr]);
+    props.addCartCallback();
   }
 
   return (
