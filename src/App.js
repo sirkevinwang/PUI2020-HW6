@@ -39,7 +39,7 @@ function App() {
             <Link className="p-4 px-2" to="/shop"><span>Shop</span></Link>
             <span className="p-4 px-2">Account</span>
             <Link className="p-4 px-2 notification" to="/cart" style={{paddingRight: "0px"}}>
-              <span>Cart </span><span className="badge">{ cartSize }</span>
+              <span>Cart </span><span className="badge" style={{ display: cartSize ? 'inline' : 'none' }} >{ cartSize }</span>
             </Link>
           </div>
         </nav>

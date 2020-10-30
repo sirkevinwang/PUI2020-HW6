@@ -60,7 +60,7 @@ function Shop() {
       ), url(${CoverImage})`, backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', color: 'white'
         }}>
           <div className="center s-center">
-            <h3 className="text-center">Cinnamon Rolls</h3>
+            <h3 className="text-center cover-h">Cinnamon Rolls</h3>
           </div>
         </div>
       </div>

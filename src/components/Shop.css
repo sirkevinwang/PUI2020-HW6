@@ -44,6 +44,10 @@ a {
   padding: 0 15vw;
 }
 
+.cover-h {
+  font-weight: 500;
+}
+
 /* Grid */
 .flavor-grid {
   display: grid;
