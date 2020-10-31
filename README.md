@@ -1,6 +1,6 @@
 # PUI-A6
 
-## Extra Work Done for Extra Credit
+## Extra Work Done for Extra Credit (from A5)
 - Backberry Delight (flavor in addition to original) Product Page
 - Added favicons
 - Implemented custom controls (using only CSS)
@@ -16,3 +16,4 @@
 
 ## Code Cited
 - https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_custom_radio
+- https://joshwcomeau.com/react/persisting-react-state-in-localstorage/
