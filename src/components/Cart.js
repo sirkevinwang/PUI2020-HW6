@@ -1,12 +1,46 @@
 import './Cart.css';
 import CoverImage from '../img/cover.png'
-import { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import OriginalImage from '../img/item-images/the-og.png';
 import BlackberryImage from '../img/item-images/bb.png';
 
 const Cart = (props) => {
+  const skuMap = {
+    "1": {
+      name: "The Original",
+      img: OriginalImage
+    },
+    "2": {
+      name: "Blackberry Delight",
+      img: BlackberryImage
+    }
+  }
+  const glazingNames = {
+    "1": "No Glazing",
+    "2": "Sugar Milk Glazing",
+    "3": "Vanilla Milk Glazing",
+    "4": "Double Chocolate Glazing",
+  };
+
+  const popItem = () => {
+
+  }
+
+  const calculateSubtotal = () => {
+    const subtotal = props.cart.reduce((a, b) => parseFloat(a) + parseFloat(b.perItemPricing) * b.quantity, 0);
+    return subtotal.toFixed(2)
+  }
+
+  const calculateTaxes = () => {
+    const totalTax = parseFloat(calculateSubtotal()) * parseFloat("0.07")
+    return totalTax.toFixed(2)
+  }
+
+  const calculateTotal = () => {
+    const total = parseFloat(calculateSubtotal()) + parseFloat(calculateTaxes())
+    return total.toFixed(2)
+  }
+
   return (
     <div>
       <div className="top-cover">
@@ -23,31 +57,33 @@ const Cart = (props) => {
         </div>
       </div>
       <div id="cart-container">
-        <div id="items-wrapper">
-          <div className="cart-item">
-            <div className="column cart-item-image fill">
-              <img src={OriginalImage}></img>
-            </div>
-            <div className="column cart-item-info">
-              <h3 className="item-name">The Original</h3>
-              <div className="item-price"><span>$3.99 / pc</span></div>
-              <div className="item-config"><span>Vanilla Milk Glazing</span></div>
-            </div>
-            <div className="column cart-item-actions">
-              <div>
-                <select name="quantity" id="quantity">
-                  <option value="1" defaultChecked>1</option>
-                  <option value="3">3</option>
-                  <option value="6">6</option>
-                  <option value="12">12</option>
-                </select>
-                <span style={{ paddingLeft: '10px' }}>Rolls</span>
+        {props.cart.map((cartItem, index) =>
+          <div id="items-wrapper" key={index}>
+            <div className="cart-item">
+              <div className="column cart-item-image fill">
+                <img src={skuMap[cartItem.sku].img}></img>
               </div>
-              <div><a>Remove</a></div>
-              <div><a>Edit</a></div>
+              <div className="column cart-item-info">
+                <h3 className="item-name">{skuMap[cartItem.sku].name}</h3>
+                <div className="item-price"><span>${cartItem.perItemPricing} / pc</span></div>
+                <div className="item-config"><span>{glazingNames[cartItem.glazing]}</span></div>
+              </div>
+              <div className="column cart-item-actions">
+                <div className="dropdown control-group">
+                  {/* <select name="quantity" id="quantity">
+                    <option value="1" defaultChecked>1</option>
+                    <option value="3">3</option>
+                    <option value="6">6</option>
+                    <option value="12">12</option>
+                  </select> */}
+                  <span id="quantity-unit">{cartItem.quantity} Roll{cartItem.quantity === "1" ? "" : "s"}</span>
+                </div>
+                <div><a onClick={popItem(index)}>Remove</a></div>
+              </div>
             </div>
           </div>
-        </div>
+        )}
+        
         <hr className="divider"></hr>
         <div id="receipt">
           <div className="total-placeholder"></div>
@@ -56,7 +92,7 @@ const Cart = (props) => {
               <tbody>
                 <tr>
                   <td>Subtotal</td>
-                  <td className="total-second-col">$3.99</td>
+                  <td className="total-second-col">${calculateSubtotal()}</td>
                 </tr>
                 <tr>
                   <td>Shipping</td>
@@ -64,7 +100,7 @@ const Cart = (props) => {
                 </tr>
                 <tr>
                   <td>Estimated tax for 15232</td>
-                  <td className="total-second-col">$0.28</td>
+                  <td className="total-second-col">${calculateTaxes()}</td>
                 </tr>
               </tbody>
             </table>
@@ -73,7 +109,7 @@ const Cart = (props) => {
               <tbody>
                 <tr>
                   <td className="total-row">Total</td>
-                  <td className="total-second-col total-row">$4.27</td>
+                  <td className="total-second-col total-row">${calculateTotal()}</td>
                 </tr>
               </tbody>
             </table>

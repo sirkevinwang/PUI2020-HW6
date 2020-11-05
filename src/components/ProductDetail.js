@@ -16,7 +16,7 @@ const ProductDetail = (props) => {
   };
   const [quantity, setQuantity] = useState(1);
   const [glazing, setGlazing] = useState('1');
-  const [cart, setCart] = useLocalStorage('cart', []);
+  const [cart, _] = useLocalStorage('cart', []);
 
   const updateGlazing = (e) => {
     if (e.target.checked) {
@@ -41,6 +41,7 @@ const ProductDetail = (props) => {
 
   function handleAddToCart() {
     const productToAdd = {
+      sku: props.sku,
       quantity: quantity,
       glazing: glazing,
       perItemPricing: calculatePerItemPricing()
@@ -48,8 +49,7 @@ const ProductDetail = (props) => {
 
     const cartArr = cart;
     cartArr.push(productToAdd);
-    setCart([...cartArr]);
-
+    props.setCart([...cartArr]);
     props.setCartSize(cartArr.length);
   }
 
