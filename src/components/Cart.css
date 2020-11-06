@@ -74,6 +74,7 @@ a {
 
 .cart-item-actions div > a{
   color: #0072DB;
+  cursor: pointer;
 }
 
 .fill img{
@@ -83,11 +84,17 @@ a {
 }
 
 .divider {
-  margin: 1.5rem 0;
+  margin: 1.05rem 0;
+  height: 1.5px;
+  border: none;
+  background-color: #ffffffab;
 }
 
-.divider {
-  margin: 1rem 0;
+.divider-2 {
+  margin: 0.875rem 0;
+  height: 1.5px;
+  border: none;
+  background-color: #ffffffab;
 }
 
 
@@ -122,7 +129,7 @@ a {
 }
 
 #items-wrapper {
-  padding: 0 2rem;
+  padding: 1rem 2rem;
 }
 
 .full-width tbody tr td{

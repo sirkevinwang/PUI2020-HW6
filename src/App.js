@@ -22,7 +22,8 @@ function App() {
 
     // when storage updated
     const handler = () => {
-       setCartSize(cart.length); setCart(cart);
+       setCartSize(cart.length); 
+       setCart(cart);
       };
     window.addEventListener('storage', handler);
     return() => window.removeEventListener('storage', handler);
@@ -56,7 +57,7 @@ function App() {
         <ProductDetail {...props} id="bb" productName="Blackberry Delight" price="4.99" imgSrc={BlackberryImage} setCartSize={setCartSize} setCart={setCart} sku="2"/>
       )} />
       <Route path="/cart" render={(props) => (
-        <Cart {...props} cart={cart} cartSize={cartSize} cartSizeSetter={setCartSize}/>
+        <Cart {...props} cart={cart} cartSize={cartSize} cartSetter={setCart} cartSizeSetter={setCartSize}/>
       )} />
     </HashRouter>
   );

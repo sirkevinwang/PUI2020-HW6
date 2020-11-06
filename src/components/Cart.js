@@ -22,8 +22,12 @@ const Cart = (props) => {
     "4": "Double Chocolate Glazing",
   };
 
-  const popItem = () => {
-
+  const popItem = (i) => {
+    const newArr = props.cart;
+    newArr.splice(i, 1);
+    console.log(newArr);
+    props.cartSetter([...newArr]);
+    props.cartSizeSetter(newArr.length);
   }
 
   const calculateSubtotal = () => {
@@ -70,18 +74,13 @@ const Cart = (props) => {
               </div>
               <div className="column cart-item-actions">
                 <div className="dropdown control-group">
-                  {/* <select name="quantity" id="quantity">
-                    <option value="1" defaultChecked>1</option>
-                    <option value="3">3</option>
-                    <option value="6">6</option>
-                    <option value="12">12</option>
-                  </select> */}
                   <span id="quantity-unit">{cartItem.quantity} Roll{cartItem.quantity === "1" ? "" : "s"}</span>
                 </div>
-                <div><a onClick={popItem(index)}>Remove</a></div>
+                <div><a onClick={() => popItem(index)}>Remove</a></div>
               </div>
             </div>
           </div>
+          
         )}
         
         <hr className="divider"></hr>
