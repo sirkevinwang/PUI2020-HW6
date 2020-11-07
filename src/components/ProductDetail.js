@@ -16,6 +16,7 @@ const ProductDetail = (props) => {
   const [quantity, setQuantity] = useState(1);
   const [glazing, setGlazing] = useState('1');
   const [showBanner, setShowBanner] = useState(0);
+  const [currentQuantity, setCurrentQuantity] = useState(1);
   const [cart] = useLocalStorage('cart', []);
 
   const updateGlazing = (e) => {
@@ -51,6 +52,8 @@ const ProductDetail = (props) => {
     cartArr.push(productToAdd);
     props.setCart([...cartArr]);
     props.setCartSize(cartArr.length);
+
+    setCurrentQuantity(quantity);
     setShowBanner(1);
   }
 
@@ -58,8 +61,8 @@ const ProductDetail = (props) => {
     <>
     <div className="intro-section details center-parent text-center"></div>
       <div className="add-banner" style={{display: showBanner ? "block" : "none"}}>
-        <span>{props.productName} has been added to your cart.</span>
-          <Link to="/cart">
+        <span>{currentQuantity}x {props.productName} {currentQuantity > 1 ? "have" : "has"} been added to your cart.</span>
+            <Link to="/cart">
         <div style={{float: "right"}}>
             <span>Cart</span>
             <i className="material-icons">keyboard_arrow_right</i>
