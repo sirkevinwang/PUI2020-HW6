@@ -14,17 +14,20 @@ import logo from './img/logo.png'
 
 function App() {
   const [cartSize, setCartSize] = useState(0);
-  const [cart] = useLocalStorage('cart', []);
+  const [cart, setCart] = useLocalStorage('cart', []);
 
   useEffect(() => {
     // when app loaded
     setCartSize(cart.length);
 
     // when storage updated
-    const handler = () => { setCartSize(cart.length); };
+    const handler = () => {
+       setCartSize(cart.length); 
+       setCart(cart);
+      };
     window.addEventListener('storage', handler);
     return() => window.removeEventListener('storage', handler);
-  }, []);
+  }, [cart, setCart]);
 
   return (
     <HashRouter>
@@ -48,13 +51,13 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route path="/shop" component={Shop} />
       <Route path="/products/original" render={(props) => (
-        <ProductDetail {...props} id="og" productName="The Original" price="3.99" imgSrc={OriginalImage} setCartSize={setCartSize} />
+        <ProductDetail {...props} id="og" productName="The Original" price="3.99" imgSrc={OriginalImage} setCartSize={setCartSize} setCart={setCart} sku="1"/>
       )}/>
       <Route path="/products/blackberry" render={(props) => (
-        <ProductDetail {...props} id="bb" productName="Blackberry Delight" price="4.99" imgSrc={BlackberryImage} setCartSize={setCartSize} />
+        <ProductDetail {...props} id="bb" productName="Blackberry Delight" price="4.99" imgSrc={BlackberryImage} setCartSize={setCartSize} setCart={setCart} sku="2"/>
       )} />
       <Route path="/cart" render={(props) => (
-        <Cart {...props} />
+        <Cart {...props} cart={cart} cartSize={cartSize} cartSetter={setCart} cartSizeSetter={setCartSize}/>
       )} />
     </HashRouter>
   );
