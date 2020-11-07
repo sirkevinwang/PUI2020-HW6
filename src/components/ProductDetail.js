@@ -7,24 +7,29 @@ import shakerImg from '../img/shaker.png';
 
 
 const ProductDetail = (props) => {
+  // store add on price
   const glazingPricing = { 
     "1": "0", 
     "2": "0.3", 
     "3": "0.3", 
     "4": "1"
   };
+
+  // hooks
   const [quantity, setQuantity] = useState(1);
   const [glazing, setGlazing] = useState('1');
   const [showBanner, setShowBanner] = useState(0);
   const [currentQuantity, setCurrentQuantity] = useState(1);
   const [cart] = useLocalStorage('cart', []);
 
+  // updates the glazing options
   const updateGlazing = (e) => {
     if (e.target.checked) {
       setGlazing(e.target.value);
     }
   }
   
+  // price calculation
   function calculateTotalPrice() {
     const value = parseFloat(calculatePerItemPricing()) * quantity;
     return value.toFixed(2);
@@ -35,10 +40,12 @@ const ProductDetail = (props) => {
     return value.toFixed(2);
   }
 
+  // update quantity
   function handleQuantityChange(event) {
     let value = event.target.value;
     setQuantity(value);
   };
+
 
   function handleAddToCart() {
     const productToAdd = {
@@ -48,11 +55,13 @@ const ProductDetail = (props) => {
       perItemPricing: calculatePerItemPricing()
     };
 
+    // propragate changes
     const cartArr = cart;
     cartArr.push(productToAdd);
     props.setCart([...cartArr]);
     props.setCartSize(cartArr.length);
 
+    // update UI
     setCurrentQuantity(quantity);
     setShowBanner(1);
   }
@@ -135,6 +144,7 @@ const ProductDetail = (props) => {
             </label>
           </div>
         </div>
+        {/* Add to Cart buttons */}
         <span className="price pl-1">Total Amount: ${calculateTotalPrice()}</span>
         <div className="add-to-cart-btns my-4">
           <span className="round-btn mr-1" onClick={handleAddToCart}>Add to Cart</span>

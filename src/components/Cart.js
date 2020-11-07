@@ -60,8 +60,11 @@ const Cart = (props) => {
           </div>
         </div>
       </div>
+      {/* Shows empty cart */}
       <div style={{display: props.cartSize > 0 ? "none" : "block"}}><h5 className="p-4">Your cart is empty.</h5></div>
+      {/* Cart not empty */}
       <div id="cart-container" style={{ display: props.cartSize > 0 ? "block" : "none" }}>
+        {/* Cart item mapper */}
         {props.cart.map((cartItem, index) =>
           <div id="items-wrapper" key={index}>
             <div className="cart-item">
@@ -82,7 +85,7 @@ const Cart = (props) => {
             </div>
           </div>
         )}
-        
+        {/* Total calculation */}
         <hr className="divider"></hr>
         <div id="receipt">
           <div className="total-placeholder"></div>
