@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import useLocalStorage from '../hooks/UseLocalStorage.js';
 import './ProductDetail.css';
-
 import quantImg from '../img/num.png';
 import shakerImg from '../img/shaker.png';
 
@@ -16,7 +15,8 @@ const ProductDetail = (props) => {
   };
   const [quantity, setQuantity] = useState(1);
   const [glazing, setGlazing] = useState('1');
-  const [cart, _] = useLocalStorage('cart', []);
+  const [showBanner, setShowBanner] = useState(0);
+  const [cart] = useLocalStorage('cart', []);
 
   const updateGlazing = (e) => {
     if (e.target.checked) {
@@ -51,11 +51,22 @@ const ProductDetail = (props) => {
     cartArr.push(productToAdd);
     props.setCart([...cartArr]);
     props.setCartSize(cartArr.length);
+    setShowBanner(1);
   }
 
   return (
+    <>
+    <div className="intro-section details center-parent text-center"></div>
+      <div className="add-banner" style={{display: showBanner ? "block" : "none"}}>
+        <span>{props.productName} has been added to your cart.</span>
+          <Link to="/cart">
+        <div style={{float: "right"}}>
+            <span>Cart</span>
+            <i className="material-icons">keyboard_arrow_right</i>
+        </div>
+          </Link>
+      </div>
     <div className="container">
-      <div className="intro-section details center-parent text-center"></div>
       {/* Product Image */}
       <div className="product-image">
         <img src={props.imgSrc} alt={props.productName} />
@@ -128,6 +139,7 @@ const ProductDetail = (props) => {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

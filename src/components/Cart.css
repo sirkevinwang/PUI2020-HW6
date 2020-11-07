@@ -72,7 +72,7 @@ a {
   padding-bottom: .75rem;
 }
 
-.cart-item-actions div > a{
+.btn{
   color: #0072DB;
   cursor: pointer;
 }

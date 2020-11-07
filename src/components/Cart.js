@@ -60,12 +60,13 @@ const Cart = (props) => {
           </div>
         </div>
       </div>
-      <div id="cart-container">
+      <div style={{display: props.cartSize > 0 ? "none" : "block"}}><h5 className="p-4">Your cart is empty.</h5></div>
+      <div id="cart-container" style={{ display: props.cartSize > 0 ? "block" : "none" }}>
         {props.cart.map((cartItem, index) =>
           <div id="items-wrapper" key={index}>
             <div className="cart-item">
               <div className="column cart-item-image fill">
-                <img src={skuMap[cartItem.sku].img}></img>
+                <img src={skuMap[cartItem.sku].img} alt="cinnamon roll"></img>
               </div>
               <div className="column cart-item-info">
                 <h3 className="item-name">{skuMap[cartItem.sku].name}</h3>
@@ -76,11 +77,10 @@ const Cart = (props) => {
                 <div className="dropdown control-group">
                   <span id="quantity-unit">{cartItem.quantity} Roll{cartItem.quantity === "1" ? "" : "s"}</span>
                 </div>
-                <div><a onClick={() => popItem(index)}>Remove</a></div>
+                <div><span className="btn" onClick={() => popItem(index)}>Remove</span></div>
               </div>
             </div>
           </div>
-          
         )}
         
         <hr className="divider"></hr>

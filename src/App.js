@@ -27,7 +27,7 @@ function App() {
       };
     window.addEventListener('storage', handler);
     return() => window.removeEventListener('storage', handler);
-  }, []);
+  }, [cart, setCart]);
 
   return (
     <HashRouter>
