@@ -72,10 +72,10 @@ const ProductDetail = (props) => {
       <div className="add-banner" style={{display: showBanner ? "block" : "none"}}>
         <span>{currentQuantity}x {props.productName} {currentQuantity > 1 ? "have" : "has"} been added to your cart.</span>
             <Link to="/cart">
-        <div style={{float: "right"}}>
-            <span>Cart</span>
-            <i className="material-icons">keyboard_arrow_right</i>
-        </div>
+              <div style={{float: "right"}}>
+                  <span>Cart</span>
+                  <i className="material-icons">keyboard_arrow_right</i>
+              </div>
           </Link>
       </div>
     <div className="container">
