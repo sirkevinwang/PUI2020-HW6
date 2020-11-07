@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Hook
+// hook to update local storage
 const useLocalStorage = (key, defaultValue) => {
   const [value, setValue] = React.useState(() => {
     const stickyValue = window.localStorage.getItem(key);

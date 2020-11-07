@@ -10,6 +10,7 @@ import pumpkinImg from '../img/pumpkin.png';
 import pecanImg from '../img/pecan.png';
 
 function Shop() {
+  // stored constant
   const flavors = [
     {
       id: 'og',

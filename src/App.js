@@ -48,6 +48,7 @@ function App() {
         </nav>
 
       </div>
+      {/* Routes */}
       <Route exact path="/" component={Home} />
       <Route path="/shop" component={Shop} />
       <Route path="/products/original" render={(props) => (
